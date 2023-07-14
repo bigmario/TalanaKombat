@@ -44,7 +44,7 @@ async def index():
     return JSONResponse(
         {
             "Framework": "FastAPI",
-            "Message": "Hello Human, welcome to the FastAPI Squadmakers Challenge",
+            "Message": "Hello Human, welcome to Talana Challenge",
         }
     )
     
