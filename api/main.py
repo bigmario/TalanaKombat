@@ -1,5 +1,5 @@
 from fastapi import FastAPI, status, Body
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
 
@@ -60,4 +60,4 @@ async def fight(
     Narrate fight:
     """
     fight = narrar_pelea(body)
-    return fight
+    return HTMLResponse(fight)
