@@ -39,7 +39,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get(path="/api/welcome", summary="Welcome", tags=["Index"])
+@app.get(path="/api/welcome", summary="Welcome", tags=["Welcome"])
 async def index():
     return JSONResponse(
         {
@@ -52,6 +52,7 @@ async def index():
     path="/api/fight",
     status_code=status.HTTP_200_OK,
     summary="Narrate a fight",
+    tags=["Fight"]
 )
 async def fight(
     body: FightSchema = Body(...),    
