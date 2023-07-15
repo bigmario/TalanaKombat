@@ -39,7 +39,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get(path="/api/welcome", summary="Index", tags=["Index"])
+@app.get(path="/api/welcome", summary="Welcome", tags=["Index"])
 async def index():
     return JSONResponse(
         {
