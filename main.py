@@ -65,9 +65,9 @@ def narrar_pelea(pelea_json):
     p1 = "Tonyn Stallone"
     p2 = "Arnaldor Shuatseneguer"
 
-    max_turnos = max(len(acciones_p1["movimientos"]), len(acciones_p2["movimientos"]))
+    max_turnos = max([acciones_p1["movimientos"], acciones_p2["movimientos"]], key=len)
 
-    for i in range(max_turnos):
+    for i in range(len(max_turnos)):
         movimiento_p1 = (
             acciones_p1["movimientos"][i] if i < len(acciones_p1["movimientos"]) else ""
         )
