@@ -39,7 +39,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get(path="/", summary="Index", tags=["Index"])
+@app.get(path="/api/welcome", summary="Index", tags=["Index"])
 async def index():
     return JSONResponse(
         {
@@ -49,7 +49,7 @@ async def index():
     )
     
 @app.post(
-    path="/fight",
+    path="/api/fight",
     status_code=status.HTTP_200_OK,
     summary="Narrate a fight",
 )

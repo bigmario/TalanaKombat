@@ -113,15 +113,19 @@ el resultado es el siguiente
 ### Solución:
 El código resuelve un problema relacionado con un juego llamado "Talana Kombat", que simula una pelea entre dos personajes, Tonyn Stallone y Arnaldor Shuatseneguer, en el estilo de un juego de rol japonés (JRPG). El objetivo es desarrollar una solución en Python que narre la pelea y determine al ganador siguiendo ciertas reglas establecidas.
 
-El código se divide en varias funciones, cada una con una responsabilidad específica:
+Se implemento una API desarrollada en Python con el Framework FastAPI que consta de 2 endpoints:
+- <url>/api/welcome<br>
+    Endpoint GET de bienvenida al reto<br>
+- <url>/api/fight<br>
+    Enpoint POST que recibe un JSON con la estructura correspondiente a la lucha y ejecuta el código ubicado en ```api/core/fight_core.py``` 
+    
+El codigo en ```api/core/fight_core.py``` se divide en varias funciones, cada una con una responsabilidad específica:
 
 1. La función `ejecutar_golpe` recibe como parámetros el personaje, el movimiento y el golpe. Su objetivo es determinar qué acción realiza el personaje y devolver la narración correspondiente junto con la energía del golpe. La función contiene lógica condicional para cada personaje y su conjunto de movimientos y golpes. Si se encuentra una combinación válida de movimiento y golpe para un personaje específico, se genera una narración adecuada y se asigna la energía correspondiente al golpe ejecutado. Además, también se tiene en cuenta la posibilidad de movimientos adicionales como "Arriba", "Abajo", "Izquierda" y "Derecha", registrando la acción de movimiento correspondiente.
 
 2. La función `determinar_ganador` recibe las energías de ambos personajes y se encarga de determinar al ganador según las reglas establecidas. Si la energía de Tonyn Stallone (personaje 1) es menor o igual a cero, se declara a Arnaldor Shuatseneguer como ganador. Por otro lado, si la energía de Arnaldor Shuatseneguer (personaje 2) es menor o igual a cero, se declara a Tonyn Stallone como ganador. Si ninguna de estas condiciones se cumple, se considera que la pelea termina en empate.
 
 3. La función principal `narrar_pelea` recibe un JSON que contiene las acciones de ambos personajes. Su propósito es narrar la pelea entre los personajes basándose en las acciones proporcionadas. La función comienza inicializando variables como las energías de ambos personajes y los nombres de los personajes involucrados en la pelea. Luego, itera sobre el número máximo de turnos, que se determina tomando la longitud máxima de las listas de movimientos de ambos personajes. Esto garantiza que ambos personajes tengan la misma cantidad de turnos narrados. Dentro del bucle, se obtienen los movimientos y golpes correspondientes de cada personaje en el turno actual y se llama a la función `ejecutar_golpe` para obtener la narración específica y la energía del golpe. Luego, se actualizan las energías de los personajes según los golpes ejecutados. La narración se va acumulando en una variable de texto. Al finalizar el bucle, se determina al ganador utilizando la función `determinar_ganador` y se agrega esa información a la narración.
-
-Finalmente, se proporcionan tres ejemplos de peleas en formato JSON. Cada pelea contiene las acciones de ambos personajes, incluyendo movimientos y golpes. Se utiliza la función `narrar_pelea` para narrar cada pelea y el resultado se imprime por pantalla.
 
 En resumen, el código implementa un algoritmo que permite simular peleas entre personajes en el juego "Talana Kombat". Proporciona una narración de la pelea y determina al ganador basándose en las acciones y reglas establecidas. El código se organiza en funciones para modularizar la lógica y facilitar la comprensión y el mantenimiento del programa.
 
