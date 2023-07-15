@@ -15,7 +15,7 @@ def ejecutar_golpe(personaje, movimiento, golpe):
             or movimiento == "A"
             or movimiento == "D"
         ):
-            narracion = f"{personaje} se mueve {movimiento}"
+            narracion = f"{personaje} se mueve hacia {movimiento}"
         elif golpe == "P":
             narracion = f"{personaje} da un puñetazo"
             energia = 1
@@ -35,7 +35,7 @@ def ejecutar_golpe(personaje, movimiento, golpe):
             or movimiento == "A"
             or movimiento == "D"
         ):
-            narracion = f"{personaje} se mueve {movimiento}"
+            narracion = f"{personaje} se mueve hacia {movimiento}"
         elif golpe == "K":
             narracion = f"{personaje} da una patada"
             energia = 1
