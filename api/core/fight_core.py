@@ -86,9 +86,9 @@ def narrar_pelea(pelea_json_pydantic):
         narracion_p2, energia_golpe_p2 = ejecutar_golpe(p2, movimiento_p2, golpe_p2)
 
         if narracion_p1:
-            narracion += f"- {narracion_p1}\n"
+            narracion += f"➢ {narracion_p1}\n"
         if narracion_p2:
-            narracion += f"- {narracion_p2}\n"
+            narracion += f"➢ {narracion_p2}\n"
 
         energia_p2 -= energia_golpe_p1
 
