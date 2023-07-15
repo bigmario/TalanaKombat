@@ -130,9 +130,12 @@ En resumen, el código implementa un algoritmo que permite simular peleas entre 
 # Directamente con el intérprete Python
 $ python3 main.py
 
-# Mediante Docker
+# Mediante Docker (haciendo build de los archivos locales)
 $ docker build -t talanakombat .
 $ docker run talanakombat
+
+# Mediante Docker (desde DockerHub)
+$ docker run bigmario/talanakombat_script
 ```
 
 ### Preguntas Generales
