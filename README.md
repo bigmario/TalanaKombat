@@ -115,3 +115,13 @@ El código se divide en varias funciones, cada una con una responsabilidad espec
 Finalmente, se proporcionan tres ejemplos de peleas en formato JSON. Cada pelea contiene las acciones de ambos personajes, incluyendo movimientos y golpes. Se utiliza la función `narrar_pelea` para narrar cada pelea y el resultado se imprime por pantalla.
 
 En resumen, el código implementa un algoritmo que permite simular peleas entre personajes en el juego "Talana Kombat". Proporciona una narración de la pelea y determina al ganador basándose en las acciones y reglas establecidas. El código se organiza en funciones para modularizar la lógica y facilitar la comprensión y el mantenimiento del programa.
+
+### Ejecución de la solución
+```bash
+# Directamente con el interprete Python
+$ python3 main.py
+
+# Mediante Docker
+$ docker build -t talanakombat .
+$ docker run talanakombat
+```
