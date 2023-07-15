@@ -1,12 +1,12 @@
-FROM python:3.11
+FROM python:3.11-slim-bookworm
 
-WORKDIR /code
+WORKDIR /talana_kombat
 
-COPY ./requirements.txt /code/requirements.txt
+COPY ./requirements.txt /talana_kombat/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /talana_kombat/requirements.txt
 
-COPY . /code
+COPY . /talana_kombat
 
 EXPOSE 8000
 
