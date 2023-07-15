@@ -131,8 +131,7 @@ En resumen, el código implementa un algoritmo que permite simular peleas entre 
 $ python3 main.py
 
 # Mediante Docker
-$ docker build -t talanakombat .
-$ docker run talanakombat
+$ docker compose up --build
 ```
 
 ### Preguntas Generales
