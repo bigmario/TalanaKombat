@@ -1,5 +1,6 @@
 import json
 
+
 def ejecutar_golpe(personaje, movimiento, golpe):
     energia = 0
     narracion = ""
