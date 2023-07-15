@@ -100,10 +100,9 @@ def narrar_pelea(pelea_json):
     return narracion
 
 
-
 if __name__ == "__main__":
     # Pelea 1
-    pelea_json = {
+    pelea1 = {
         "player1": {
             "movimientos": ["D", "DSD", "S", "DSD", "SD"],
             "golpes": ["K", "P", "", "K", "P"],
@@ -114,8 +113,8 @@ if __name__ == "__main__":
         },
     }
 
-    narracion_pelea = narrar_pelea(pelea_json)
-    print("Pelea 1:")
+    narracion_pelea = narrar_pelea(pelea1)
+    print("*************** Pelea 1 ***************")
     print(narracion_pelea)
     print()
 
@@ -132,7 +131,7 @@ if __name__ == "__main__":
     }
 
     narracion_pelea = narrar_pelea(pelea2)
-    print("Pelea 2:")
+    print("*************** Pelea 2 ***************")
     print(narracion_pelea)
     print()
 
@@ -149,5 +148,6 @@ if __name__ == "__main__":
     }
 
     narracion_pelea = narrar_pelea(pelea3)
-    print("Pelea 3:")
+    print("*************** Pelea 3 ***************")
+
     print(narracion_pelea)
