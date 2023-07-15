@@ -80,13 +80,13 @@ el resultado es el siguiente
 
     "player1": {
 
-        "movimientos": ["DSD", "S"],
-        "golpes": ["P", ""],
+        "movimientos": ["SDD", "DSD", "SA", "DSD"],
+        "golpes": ["K", "P", "K", "P"],
     },
     "player2": {
 
-        "movimientos": ["", "ASA", "DA", "", "SA"],
-        "golpes": ["P", "", "P", "K", "K", "k"],
+        "movimientos": ["DSD", "WSAW", "ASA", "", "ASA", "SA"],
+        "golpes": ["P", "K", "K", "K", "P", "K"],
     },
 }
 ```
