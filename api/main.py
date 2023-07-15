@@ -59,6 +59,7 @@ async def fight(
 ):
     """
     Narrate fight:
+    Provides a narrative of the fight and determines the winner based on established actions and rules. 
     """
     fight = narrar_pelea(body)
     return HTMLResponse(fight)
