@@ -104,7 +104,9 @@ el resultado es el siguiente
 ### Solucion:
 El código resuelve un problema relacionado con un juego llamado "Talana Kombat", que simula una pelea entre dos personajes, Tonyn Stallone y Arnaldor Shuatseneguer, en el estilo de un juego de rol japonés (JRPG). El objetivo es desarrollar una solución en Python que narre la pelea y determine al ganador siguiendo ciertas reglas establecidas.
 
-El código se divide en varias funciones, cada una con una responsabilidad específica:
+Se implemento una API con FastAPI que consiste de 2 endpoints, uno de bienvenida y otro para hacer la narracion de la pelea
+
+El código, ubicado en ```api/core/fight_core.py``` se divide en varias funciones, cada una con una responsabilidad específica:
 
 1. La función `ejecutar_golpe` recibe como parámetros el personaje, el movimiento y el golpe. Su objetivo es determinar qué acción realiza el personaje y devolver la narración correspondiente junto con la energía del golpe. La función contiene lógica condicional para cada personaje y su conjunto de movimientos y golpes. Si se encuentra una combinación válida de movimiento y golpe para un personaje específico, se genera una narración adecuada y se asigna la energía correspondiente al golpe ejecutado. Además, también se tiene en cuenta la posibilidad de movimientos adicionales como "Arriba", "Abajo", "Izquierda" y "Derecha", registrando la acción de movimiento correspondiente.
 
@@ -115,3 +117,14 @@ El código se divide en varias funciones, cada una con una responsabilidad espec
 Finalmente, se proporcionan tres ejemplos de peleas en formato JSON. Cada pelea contiene las acciones de ambos personajes, incluyendo movimientos y golpes. Se utiliza la función `narrar_pelea` para narrar cada pelea y el resultado se imprime por pantalla.
 
 En resumen, el código implementa un algoritmo que permite simular peleas entre personajes en el juego "Talana Kombat". Proporciona una narración de la pelea y determina al ganador basándose en las acciones y reglas establecidas. El código se organiza en funciones para modularizar la lógica y facilitar la comprensión y el mantenimiento del programa.
+
+### Puesta en marcha
+```bash
+# Ejecutar la siguiente instruccion para levantar el servicio Dockerizado:
+$ docker compose up --build
+```
+
+### Documentacion Swagger UI
+Luego de ejecutar la instruccion anterior, que levanta el servicio de la API La documentacion en Swagger UI se accede desde la siguiente direccion:  http://localhost:8000/docs <br>
+
+En ella se encuentra un endpoint POST llamado ```/fight``` que recibe el JSON segun el formato de pelea ya establecido (hay un ejemplo pre-cargado) y devuelve la narracion de dicha pelea junto con su resultado.
