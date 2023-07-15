@@ -128,3 +128,33 @@ $ docker compose up --build
 Luego de ejecutar la instruccion anterior, que levanta el servicio de la API La documentacion en Swagger UI se accede desde la siguiente direccion:  http://localhost:8000/docs <br>
 
 En ella se encuentra un endpoint POST llamado ```/fight``` que recibe el JSON segun el formato de pelea ya establecido (hay un ejemplo pre-cargado) y devuelve la narracion de dicha pelea junto con su resultado.
+
+
+### Preguntas Generales
+1. Supongamos que en un repositorio GIT hiciste un commit y olvidaste un archivo. Explica cómo se soluciona si hiciste push, y cómo si aún no hiciste.<br> 
+De ser posible, que quede solo un commit con los cambios.<br>
+    Si ya hice push: 
+    - Añado el archivo olvidado con ```git add <nombre_del_archivo>``` para agregar el archivo olvidado a staging. Luego, utilizaria el comando ```git commit --amend``` para crear un nuevo commit que incluya los cambios del archivo olvidado junto con los cambios del commit anterior.
+    - Edito el mensaje del commit con ```git commit --amend``` para dejar constancia de la situacion en el mensaje del commit. 
+    - Dado que ya he realizado push anteriormente, necesitare hacer un push forzado para sobrescribir el commit anterior en el repositorio remoto con ```git push --force origin <nombre_de_la_rama>```<br><br>
+    
+    En caso de no haber hecho push cambiaria l comando del ultimo paso por ```git push --force-with-lease origin <nombre_de_la_rama>``` porque si alguien más ha realizado cambios en la misma rama remota desde que hice el último pull, Git rechazará el push. En ese caso, puedes utilizar el comando ```--force-with-lease``` sobrescribira el commit anterior en el repositorio remoto.
+2. Si has trabajado con control de versiones ¿Cuáles han sido los flujos con los que has trabajado?<br>
+Mi experiencia ha sido con Gitflow
+
+3. ¿Cuál ha sido la situación más compleja que has tenido con esto?: Tipicamente una situacion compleja  que surge al trabajar con el enfoque de Gitflow es la resolución de conflictos durante la fusión de ramas.
+En tales situaciones, es fundamental colaborar estrechamente con el desarrollador (Yo?) que ha trabajado en el feature que genera el conflicto para comprender su implementación y resolvertodo de manera adecuada. También es importante asegurarse de que las pruebas sean realizadas exhaustivamente después de la resolución para garantizar que el código fusionado funcione correctamente y no introduzca errores en la rama de lanzamiento.
+
+4. ¿Qué experiencia has tenido con los microservicios?: Como desarrollador backend, estuve involucrado en el análisis, desarrollo e implementación de un Data Warehouse utilizando microservicios. Una de las tareas clave en este proyecto fue el proceso de Extracción, Transformación y Carga (ETL) de datos desde API's y una Base de Datos MongoDB en simultáneo.
+
+    Para lograr esto, utilicé Python y Celery para implementar tareas programadas. Python es un lenguaje versátil que me permitió conectarme a las API's y a la Base de Datos MongoDB para extraer los datos necesarios. Celery fue utilizado como un sistema de colas de tareas distribuido, lo que me permitió gestionar de manera eficiente la ejecución de las tareas de ETL.
+
+    Además, utilizamos RabbitMQ como nuestro servicio de Broker para establecer la comunicación entre los diferentes microservicios involucrados en el proceso de ETL. RabbitMQ nos brindó la capacidad de enviar y recibir mensajes entre los distintos componentes del sistema, asegurando una comunicación confiable y escalable.
+
+5. ¿Cuál es tu servicio favorito de GCP o AWS? ¿Por qué?: Mi experiencia ha sido primordialmente con AWS y me gusta mucho EC2 y la libertad que me da de armar la arquitectura de mis servicios de la manera que yo quiera utiizando VPC's, Internet Gateways, ACL's, etc.
+
+
+
+
+
+
