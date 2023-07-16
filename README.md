@@ -155,7 +155,7 @@ Se implemento una API desarrollada en Python con el Framework FastAPI que consta
 - <url>/api/welcome<br>
     Endpoint GET de bienvenida al reto<br>
 - <url>/api/fight<br>
-    Enpoint POST que recibe un JSON con la estructura correspondiente a la lucha y ejecuta el código ubicado en ```api/core/fight_core.py```
+    Enpoint POST que recibe un JSON con la estructura correspondiente a la lucha y ejecuta el código ubicado en ```api/core/fight_core.py``` (La documentacion en swagger incluye un ejemplo del JSON de pelea precargado)
 
 #### Documentación Swagger
 La documentacion con Swagger UI se encuentra en http://localhost:8000/docs
