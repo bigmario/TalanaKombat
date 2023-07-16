@@ -113,15 +113,6 @@ el resultado es el siguiente
 ## Solución del reto:
 El código resuelve un problema relacionado con un juego llamado "Talana Kombat", que simula una pelea entre dos personajes, Tonyn Stallone y Arnaldor Shuatseneguer, en el estilo de un juego de rol japonés (JRPG). El objetivo es desarrollar una solución en Python que narre la pelea y determine al ganador siguiendo ciertas reglas establecidas.
 
-### Documentación Swagger
-La documentacion con Swagger UI se encuentra en http://localhost:8000/docs
-
-Se implemento una API desarrollada en Python con el Framework FastAPI que consta de 2 endpoints:
-- <url>/api/welcome<br>
-    Endpoint GET de bienvenida al reto<br>
-- <url>/api/fight<br>
-    Enpoint POST que recibe un JSON con la estructura correspondiente a la lucha y ejecuta el código ubicado en ```api/core/fight_core.py``` 
-    
 El codigo en ```api/core/fight_core.py``` se divide en varias funciones, cada una con una responsabilidad específica:
 
 1. La función `ejecutar_golpe` recibe como parámetros el personaje, el movimiento y el golpe. Su objetivo es determinar qué acción realiza el personaje y devolver la narración correspondiente junto con la energía del golpe. La función contiene lógica condicional para cada personaje y su conjunto de movimientos y golpes. Si se encuentra una combinación válida de movimiento y golpe para un personaje específico, se genera una narración adecuada y se asigna la energía correspondiente al golpe ejecutado. Además, también se tiene en cuenta la posibilidad de movimientos adicionales como "Arriba", "Abajo", "Izquierda" y "Derecha", registrando la acción de movimiento correspondiente.
@@ -133,6 +124,7 @@ El codigo en ```api/core/fight_core.py``` se divide en varias funciones, cada un
 En resumen, el código implementa un algoritmo que permite simular peleas entre personajes en el juego "Talana Kombat". Proporciona una narración de la pelea y determina al ganador basándose en las acciones y reglas establecidas. El código se organiza en funciones para modularizar la lógica y facilitar la comprensión y el mantenimiento del programa.
 
 ### Ejecución de la solución
+Se puede hacer de dos formas:
 ```bash
 #### Directamente con el intérprete Python ###
 # crear enorno virtual de la aplicación
@@ -144,16 +136,31 @@ $ source venv/bin/activate
 # instalar dependencias
 $ pip install -r requirements.txt
 
+# crear archivo con variables de entorno
+$ cp .env.example .env
+
 #levantar el servicio
 $ python3 main.py
 ```
 
 ```bash
 #### Mediante Docker ####
+# crear archivo con variables de entorno
+$ cp .env.example .env
+
+# Levantar contenedor
 $ docker compose up --build
 ```
+Se implemento una API desarrollada en Python con el Framework FastAPI que consta de 2 endpoints:
+- <url>/api/welcome<br>
+    Endpoint GET de bienvenida al reto<br>
+- <url>/api/fight<br>
+    Enpoint POST que recibe un JSON con la estructura correspondiente a la lucha y ejecuta el código ubicado en ```api/core/fight_core.py```
 
-### Preguntas Generales
+#### Documentación Swagger
+La documentacion con Swagger UI se encuentra en http://localhost:8000/docs
+
+## Preguntas Generales
 1. Supongamos que en un repositorio GIT hiciste un commit y olvidaste un archivo. Explica cómo se soluciona si hiciste push, y cómo si aún no hiciste.<br> 
 De ser posible, que quede solo un commit con los cambios.<br>
     Si ya hice push: 
