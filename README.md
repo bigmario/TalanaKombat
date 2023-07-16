@@ -110,8 +110,11 @@ el resultado es el siguiente
 
 ## Para este desafío: Desarrollar una solución que relate la pelea e informe el resultado final.
 
-### Solución:
+## Solución del reto:
 El código resuelve un problema relacionado con un juego llamado "Talana Kombat", que simula una pelea entre dos personajes, Tonyn Stallone y Arnaldor Shuatseneguer, en el estilo de un juego de rol japonés (JRPG). El objetivo es desarrollar una solución en Python que narre la pelea y determine al ganador siguiendo ciertas reglas establecidas.
+
+### Documentación Swagger
+La documentacion con Swagger UI se encuentra en http://localhost:8000/docs
 
 Se implemento una API desarrollada en Python con el Framework FastAPI que consta de 2 endpoints:
 - <url>/api/welcome<br>
@@ -131,10 +134,22 @@ En resumen, el código implementa un algoritmo que permite simular peleas entre 
 
 ### Ejecución de la solución
 ```bash
-# Directamente con el intérprete Python
-$ python3 main.py
+#### Directamente con el intérprete Python ###
+# crear enorno virtual de la aplicación
+$ python3 -m venv venv
 
-# Mediante Docker
+# activar el entorno virtual
+$ source venv/bin/activate
+
+# instalar dependencias
+$ pip install -r requirements.txt
+
+#levantar el servicio
+$ python3 main.py
+```
+
+```bash
+#### Mediante Docker ####
 $ docker compose up --build
 ```
 
