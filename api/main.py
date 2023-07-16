@@ -39,7 +39,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get(path="/api/welcome", summary="Welcome", tags=["Welcome"])
+# Welcome Endpoint
+@app.get(
+    path="/api/welcome", 
+    status_code=status.HTTP_200_OK, 
+    summary="Welcome", 
+    tags=["Welcome"]
+)
 async def index():
     return JSONResponse(
         {
@@ -47,7 +53,9 @@ async def index():
             "Message": "Hello Human, welcome to Talana Challenge",
         }
     )
-    
+
+
+# Fight Endpoint
 @app.post(
     path="/api/fight",
     status_code=status.HTTP_200_OK,
