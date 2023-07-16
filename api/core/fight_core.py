@@ -4,6 +4,7 @@ import json
 def ejecutar_golpe(personaje, movimiento, golpe):
     energia = 0
     narracion = ""
+    direccion = ""
 
     if personaje == "Tonyn Stallone":
         if movimiento == "DSD" and golpe == "P":
@@ -18,7 +19,15 @@ def ejecutar_golpe(personaje, movimiento, golpe):
             or movimiento == "A"
             or movimiento == "D"
         ):
-            narracion = f"{personaje} se mueve hacia {movimiento}"
+            if movimiento == "W":
+                direccion = "Arriba"
+            elif movimiento == "S":
+                direccion = "Abajo"
+            elif movimiento == "A":
+                direccion = "Izquierda"
+            elif movimiento == "D":
+                direccion = "Derecha"
+            narracion = f"{personaje} se mueve hacia {direccion}"
         elif golpe == "P":
             narracion = f"{personaje} da un puñetazo"
             energia = 1
@@ -38,7 +47,15 @@ def ejecutar_golpe(personaje, movimiento, golpe):
             or movimiento == "A"
             or movimiento == "D"
         ):
-            narracion = f"{personaje} se mueve hacia {movimiento}"
+            if movimiento == "W":
+                direccion = "Arriba"
+            elif movimiento == "S":
+                direccion = "Abajo"
+            elif movimiento == "A":
+                direccion = "Izquierda"
+            elif movimiento == "D":
+                direccion = "Derecha" 
+            narracion = f"{personaje} se mueve hacia {direccion}"
         elif golpe == "K":
             narracion = f"{personaje} da una patada"
             energia = 1
